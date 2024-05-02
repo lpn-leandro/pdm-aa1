@@ -13,7 +13,7 @@ export default function index() {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    //if(username === 'teste' && password === '123')
+    if(username === 'teste' && password === '123')
     router.push("/home");
   }
 

@@ -3,6 +3,7 @@ import React from 'react'
 import Scrollable from '../components/containers/Scrollable'
 import HeaderWithHamburguer from '../components/headers/HeaderWithHamburguer'
 import { ActionSheetProvider } from '@expo/react-native-action-sheet'
+import SectionListUi from '../components/ui/SectionListUi'
 
 export default function home() {
   return (
@@ -10,6 +11,7 @@ export default function home() {
     <Scrollable>
       <HeaderWithHamburguer title='Home' optionsProps={["About", "Logout"]} destructiveButtonIndex={1}/>
       <Text style={styles.title}> Carros a Venda </Text>
+      <SectionListUi/>
     </Scrollable>
     </ActionSheetProvider>
   )
