@@ -14,7 +14,7 @@ export default function index() {
 
   const handleLogin = () => {
     //if(username === 'teste' && password === '123')
-    router.push("/about")
+    router.push("/home");
   }
 
   return (
@@ -24,7 +24,7 @@ export default function index() {
         <FormInput label="Username" value={username} onChangeText={setUsername}/>
         <FormInput label="Password" value={password} onChangeText={setPassword} secureTextEntry/>
 
-        <FormButton onPress={handleLogin} title="Login!"/>
+        <FormButton onPress={handleLogin} title="Login"/>
       </Card>
     </FullScreen>
   );
