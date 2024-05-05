@@ -20,7 +20,7 @@ export default function index() {
   return (
     <FullScreen>
       <Card>
-        <Image style={styles.logo} source={require("../../assets/images/logo.png")}/>
+        <Image resizeMode="contain" style={styles.logo} source={require("../../assets/images/logo2.png")}/>
         <FormInput label="Username" value={username} onChangeText={setUsername}/>
         <FormInput label="Password" value={password} onChangeText={setPassword} secureTextEntry/>
 
@@ -33,7 +33,7 @@ export default function index() {
 const styles = StyleSheet.create({
   logo: {
     width: '100%',
-    height: 100,
+    maxHeight: '100%',
     alignContent: "center"
   }
 });

@@ -7,13 +7,11 @@ import SectionListUi from '../components/ui/SectionListUi'
 
 export default function home() {
   return (
-    <ActionSheetProvider>
     <Scrollable>
-      <HeaderWithHamburguer title='Home' optionsProps={["About", "Logout"]} destructiveButtonIndex={1}/>
+      <HeaderWithHamburguer title='Home' optionsProps={["About", "Logout", "Cancel"]} destructiveButtonIndex={1} cancelButtonIndex={2}/>
       <Text style={styles.title}> Carros a Venda </Text>
       <SectionListUi/>
     </Scrollable>
-    </ActionSheetProvider>
   )
 }
 

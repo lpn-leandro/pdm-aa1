@@ -11,7 +11,8 @@ export default function Scrollable({children}:FullScreenProps) {
     <View style={styles.container}>
       <Stack.Screen options={{headerShown: false}}/>
 
-      <ScrollView>{children}</ScrollView>
+      {/* <ScrollView>{children}</ScrollView> */}
+      <View>{children}</View>
     </View>
   )
 }

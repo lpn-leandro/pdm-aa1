@@ -26,8 +26,6 @@ export default function SectionListUi() {
 
 const styles = StyleSheet.create({
   container:{
-    flex: 1,
-    flexWrap: 'wrap',
   },
   sectionList: {
     alignSelf: 'center',

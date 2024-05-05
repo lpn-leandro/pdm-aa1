@@ -11,12 +11,14 @@ type HeaderWithHamburguerProps = {
   title: string;
   optionsProps: string[];
   destructiveButtonIndex?: number;
+  cancelButtonIndex: number;
 };
 
 export default function HeaderWithHamburguer({
   title,
   optionsProps,
   destructiveButtonIndex,
+  cancelButtonIndex
 }: HeaderWithHamburguerProps) {
   const router = useRouter();
   const { showActionSheetWithOptions } = useActionSheet();
@@ -26,21 +28,23 @@ export default function HeaderWithHamburguer({
       {
         options: optionsProps,
         destructiveButtonIndex: destructiveButtonIndex,
+        cancelButtonIndex: cancelButtonIndex,
       },
       (pressedId) => {
-        console.log(title);
-        if (title === 'Home') {
-          if (pressedId === 0) {
-            router.push('/about');
-          } else {
-            router.push('/');
-          }
-        } else {
-          if (pressedId === 0) {
-            router.push('/home');
-          } else {
-            router.push('/');
-          }
+        console.log(pressedId,title);
+        switch(pressedId){
+          case 0:
+            if(title == 'Home'){
+              router.push('/about');
+            }else{
+              router.back();
+            }
+            break;
+            case 1:
+              router.navigate('/');
+            break;
+            default:
+              break;
         }
       }
     );
@@ -51,13 +55,13 @@ export default function HeaderWithHamburguer({
       options={{
         headerShown: true,
         title,
-        header: () => (
-          <View style={styles.headerStyle}>
-            <Text style={styles.title}>{title}</Text>
+        headerRight: () => (
+          // <View style={styles.headerStyle}>
+          //   <Text style={styles.title}>{title}</Text>
             <Pressable style={styles.button} onPress={() => handlePress(title)}>
-              <AntDesign name='menu-fold' size={25} color='white'></AntDesign>
+              <AntDesign name='menu-fold' size={25} color='black'></AntDesign>
             </Pressable>
-          </View>
+          // </View>
         ),
       }}
     />

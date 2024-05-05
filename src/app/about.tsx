@@ -11,12 +11,12 @@ import {
 
 export function about() {
   return (
-    <ActionSheetProvider>
       <FullScreen>
         <HeaderWithHamburguer
           title='Sobre'
-          optionsProps={['Home', 'Logout']}
+          optionsProps={['Home','Logout', 'Cancel']}
           destructiveButtonIndex={1}
+          cancelButtonIndex={2}
         />
         <Card>
           <View style={styles.container}>
@@ -36,7 +36,6 @@ export function about() {
           </View>
         </Card>
       </FullScreen>
-    </ActionSheetProvider>
   );
 }
 
